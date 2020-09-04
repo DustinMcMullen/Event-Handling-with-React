@@ -18,15 +18,26 @@ function App() {
     setButtonColor({ backgroundColor: "black" });
   }
 
+  function handleEvent() {
+    // console.log(event.target.value);
+    const uName = event.target.value;
+    console.log(uName);
+    setHeadingText("Hello" + " " + uName);
+  }
+
   return (
     <div className="container">
       <h1>{headingText}</h1>
-      <input type="text" placeholder="What's your name?" />
+      <input
+        onChange={handleEvent}
+        type="text"
+        placeholder="What's your name?"
+      />
       <button
         style={buttonColor}
         onMouseOver={darken}
         onMouseOut={lighten}
-        onClick={updateHeadingText}
+        // onClick={updateHeadingText}
       >
         Submit
       </button>
