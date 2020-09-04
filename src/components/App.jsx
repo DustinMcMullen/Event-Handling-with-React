@@ -5,9 +5,10 @@ import React, { useState } from "react";
 function App() {
   const [headingText, setHeadingText] = useState("Hello");
   const [buttonColor, setButtonColor] = useState({ backgroundColor: "white" });
+  const [name, setName] = useState("");
 
   function updateHeadingText() {
-    setHeadingText(headingText + " Dustin");
+    setHeadingText(headingText + " " + name);
   }
 
   function lighten() {
@@ -20,9 +21,8 @@ function App() {
 
   function handleEvent() {
     // console.log(event.target.value);
-    const uName = event.target.value;
-    console.log(uName);
-    setHeadingText("Hello" + " " + uName);
+    setName(event.target.value);
+    console.log(name);
   }
 
   return (
@@ -37,7 +37,7 @@ function App() {
         style={buttonColor}
         onMouseOver={darken}
         onMouseOut={lighten}
-        // onClick={updateHeadingText}
+        onClick={updateHeadingText}
       >
         Submit
       </button>
