@@ -8,7 +8,7 @@ function App() {
   const [name, setName] = useState("");
 
   function updateHeadingText() {
-    setHeadingText(headingText + " " + name);
+    setHeadingText("Hello " + name);
   }
 
   function lighten() {
